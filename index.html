@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="void">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Asuquo — Full-Stack Developer & AI Video Producer</title>
+  <meta name="description" content="Portfolio of David Asuquo: Full-Stack Engineer and AI Video Producer. Architecting high-conversion React/Next.js platforms and next-generation AI video pipelines. Lagos, Nigeria.">
+  <meta name="keywords" content="David Asuquo, Full-Stack Developer, AI Video Producer, React, Next.js, TypeScript, Cypress, Lagos, Nigeria, Portfolio 2026">
+  <meta name="author" content="David Asuquo">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="David Asuquo — Full-Stack Developer & AI Video Producer">
+  <meta property="og:description" content="Minimalist, futuristic, seamless portfolio engineering and generative AI media production.">
+  <meta property="og:image" content="assets/images/avatar.jpg">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300f2fe'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Background Ambient Canvas & Atmosphere -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="aurora-glow-1"></div>
+  <div class="aurora-glow-2"></div>
+
+  <!-- Custom Precision Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION HUD
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="David Asuquo Homepage">
+        <div class="logo-symbol">
+          <svg viewBox="0 0 24 24">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+            <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <span>DAVID ASUQUO</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#work" class="nav-item">Work</a>
+        <a href="#ai-studio" class="nav-item">AI Studio</a>
+        <a href="#stack" class="nav-item">Stack</a>
+        <a href="#journey" class="nav-item">Journey</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Command Palette Trigger -->
+        <button class="cmd-palette-btn open-terminal-btn" title="Open Interactive Terminal (⌘K)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          <span>CLI</span>
+          <span class="kbd-badge">⌘K</span>
+        </button>
+
+        <!-- Audio Sound Design Toggle -->
+        <button id="audio-toggle-btn" class="btn-icon" aria-label="Toggle Sound Effects" title="Toggle Spatial Audio FX">
+          <svg id="audio-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- Theme Mode Switcher -->
+        <button id="theme-toggle-btn" class="btn-icon" aria-label="Toggle Theme" title="Switch Theme (Void / Emerald / Titanium)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Resume Dossier View -->
+        <button class="btn btn-secondary open-resume-btn" style="padding: 8px 16px; font-size: 0.82rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          <span>Resume Dossier</span>
+        <!-- Mobile Nav Toggle -->
+        <button id="mobile-toggle-btn" class="mobile-nav-toggle btn-icon" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <div class="mobile-drawer-content">
+        <a href="#work" class="mobile-nav-link">Featured Work</a>
+        <a href="#ai-studio" class="mobile-nav-link">AI Video Studio</a>
+        <a href="#stack" class="mobile-nav-link">Neural Stack &amp; Skills</a>
+        <a href="#journey" class="mobile-nav-link">Career Milestones</a>
+        <a href="#contact" class="mobile-nav-link">Direct Contact</a>
+        <button class="btn btn-primary open-resume-btn" style="width: 100%; margin-top: 10px;">
+          View Full Resume
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="site-container">
+        <div class="hero-grid">
+          
+          <!-- Left Column: Copy & Actions -->
+          <div class="hero-copy-column">
+            <div class="hero-telemetry">
+              <div class="telemetry-node">
+                <span class="pulse-dot"></span>
+                <span>STATUS: AVAILABLE FOR Q4 2026</span>
+              </div>
+              <div class="telemetry-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>LAGOS, NG (WAT)</span>
+              </div>
+              <div class="telemetry-node">
+                <span id="lagos-clock">--:--:-- WAT</span>
+              </div>
+            </div>
+
+            <h1 class="hero-heading">
+              Engineering <span class="gradient-text">Fluid Web Apps</span> &amp; Generative AI Media.
+            </h1>
+
+            <p class="hero-bio">
+              I am <strong>David Asuquo</strong>, a dual-discipline Full-Stack Engineer and AI Video Producer.
+              I craft resilient, high-speed applications using <strong>React, Next.js, and TypeScript</strong>, while directing automated, character-led generative video pipelines for next-gen medical tech at <strong>SiriusMed Care</strong>.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#work" class="btn btn-primary">
+                <span>Explore Featured Work</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <button class="btn btn-secondary open-terminal-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+                <span>Launch CLI Console</span>
+              </button>
+            </div>
+
+            <div class="hero-social-strip">
+              <a href="https://github.com/spirited24" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>github.com/spirited24</span>
+              </a>
+
+              <button class="social-link copy-data-btn" data-copy="spiriteddavid@gmail.com" title="Click to copy email">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>spiriteddavid@gmail.com</span>
+              </button>
+
+              <button class="social-link copy-data-btn" data-copy="+2348155606889" title="Click to copy phone">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>+234 815 560 6889</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Holographic Parallax Card -->
+          <div class="hero-visual-wrapper">
+            <div class="hero-card-container">
+              
+              <!-- Floating Pill 1: AI Video Studio -->
+              <div class="floating-chip chip-ai">
+                <div class="chip-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; color: var(--text-tertiary);">SiriusMed AI</div>
+                  <div>Generative Video Producer</div>
+                </div>
+              </div>
+
+              <!-- Holographic Main Profile Card -->
+              <div class="hero-holo-card glass-panel glow-card">
+                <div class="holo-media">
+                  <img src="assets/images/avatar.jpg" alt="David Asuquo" loading="eager">
+                  <div class="holo-scanline"></div>
+                </div>
+                <div class="holo-info-bar">
+                  <div>
+                    <div class="holo-name">David Asuquo</div>
+                    <div class="holo-role">FULL-STACK &bull; AI PIPELINES</div>
+                  </div>
+                  <div class="holo-status-chip">
+                    <span class="pulse-dot" style="width: 5px; height: 5px;"></span>
+                    <span>ACTIVE</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Pill 2: High-Performance Stack -->
+              <div class="floating-chip chip-stack">
+                <div class="chip-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; color: var(--text-tertiary);">Production Engine</div>
+                  <div>React &bull; Next.js &bull; Cypress</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Metrics & Impact Strip -->
+        <div class="metrics-strip glow-card">
+          <div class="metric-item">
+            <span class="metric-number">4+</span>
+            <span class="metric-label">Years Modern Web Engineering</span>
+            <span class="metric-sub">React, Next.js, Node, Postgres</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">3+</span>
+            <span class="metric-label">Live Commercial Apps</span>
+            <span class="metric-sub">E-commerce, Food Logistics, Storefronts</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">100%</span>
+            <span class="metric-label">E2E Test Reliability</span>
+            <span class="metric-sub">Automated Cypress suite integration</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">AI+</span>
+            <span class="metric-label">End-to-End Media Pipeline</span>
+            <span class="metric-sub">Medical AI assistant narrative videos</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS SECTION
+         ========================================================================== -->
+    <section id="work" class="section-padding">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Flagship Commercial Work</span>
+          </div>
+          <h2 class="section-title">Engineered for Velocity &amp; Scale</h2>
+          <p class="section-subtitle">
+            Explore live production web applications delivered with clean component modularity, payment gateway integrations, and thorough end-to-end testing.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- PROJECT 1: VITALS E-COMMERCE -->
+          <article class="project-card glow-card">
+            <div class="project-media-wrap">
+              <img src="assets/images/vitals.jpg" alt="Vitals E-commerce App Interface" loading="lazy">
+              <div class="project-media-overlay">
+                <span class="media-badge">Production Deployment &bull; Vercel</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta-top">
+                <span class="project-category">Full-Stack E-Commerce</span>
+                <span class="project-year">2026 Edition</span>
+              </div>
+
+              <h3 class="project-heading">Vitals E-Commerce Platform</h3>
+              
+              <p class="project-desc">
+                High-performance modern commerce storefront engineered for next-generation wellness and wearable tech. Features fluid micro-interactions, persistent cart state synchronization, and an ultra-minimalist dark aesthetic.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Modular component design architecture delivering sub-second page transitions.</span>
+                </div>
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Instant checkout drawer workflow with dynamic cart validation.</span>
+                </div>
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Fully responsive across ultra-wide monitors, tablets, and smartphones.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-pills">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">State Management</span>
+                <span class="tech-pill">Vercel Edge</span>
+                <span class="tech-pill">Responsive Design</span>
+              </div>
+
+              <div class="project-links-row">
+                <a href="https://vitals-frontend.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.86rem;">
+                  <span>Launch Live App</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="https://github.com/spirited24" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.86rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>Code Repos</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: SOUTHSIDE FOOD -->
+          <article class="project-card glow-card">
+            <div class="project-media-wrap">
+              <img src="assets/images/southside.jpg" alt="Southside Food Logistics Platform" loading="lazy">
+              <div class="project-media-overlay">
+                <span class="media-badge">Live Production &bull; Lagos, NG</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta-top">
+                <span class="project-category">Culinary Logistics &bull; Payments</span>
+                <span class="project-year">Present</span>
+              </div>
+
+              <h3 class="project-heading">Southside Food Platform</h3>
+              
+              <p class="project-desc">
+                Dynamic food ordering and delivery ecosystem serving Lagos. Converted detailed Figma design specs into a high-efficiency React UI, built custom reusable component design kits, integrated secure payment gateways, and instituted Cypress E2E automated test suites.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Integrated secure payment gateways (Paystack / Flutterwave) for zero-dropoff checkout.</span>
+                </div>
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Spearheaded Cypress E2E test automation to ensure zero regression in critical order pipelines.</span>
+                </div>
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Collaborated with backend engineers to integrate RESTful API contracts seamlessly.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-pills">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Cypress E2E</span>
+                <span class="tech-pill">Payment Gateways</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">Figma Systems</span>
+              </div>
+
+              <div class="project-links-row">
+                <a href="https://www.southsidefood.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.86rem;">
+                  <span>Launch Live Platform</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="btn btn-secondary open-terminal-btn" style="padding: 10px 18px; font-size: 0.86rem;">
+                  <span>Inspect Spec</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: SWIFTSELL SHOP -->
+          <article class="project-card glow-card">
+            <div class="project-media-wrap">
+              <img src="assets/images/swiftsell.jpg" alt="Swiftsell Merchant Dashboard" loading="lazy">
+              <div class="project-media-overlay">
+                <span class="media-badge">Merchant Engine &bull; Next.js</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta-top">
+                <span class="project-category">Commerce Infrastructure</span>
+                <span class="project-year">2023 - Present</span>
+              </div>
+
+              <h3 class="project-heading">Swiftsell Commerce &amp; Analytics</h3>
+              
+              <p class="project-desc">
+                Merchant storefront creator and real-time sales management suite. Built with Next.js, integrating complex backend endpoints based strictly on Swagger/OpenAPI specifications with rigorous Git pull request workflows.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Interfaced with backend services through Swagger documentation specs.</span>
+                </div>
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Engineered responsive analytics dashboards for orders, revenue metrics, and inventory.</span>
+                </div>
+                <div class="highlight-row">
+                  <span class="highlight-bullet">&#9670;</span>
+                  <span>Active team contributor using Git feature-branching, PR reviews, and Agile sprints.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-pills">
+                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill">Swagger / OpenAPI</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">Git PR Reviews</span>
+                <span class="tech-pill">Agile / Scrum</span>
+              </div>
+
+              <div class="project-links-row">
+                <a href="https://www.swiftsell.shop" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.86rem;">
+                  <span>Launch Live Store</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AI VIDEO PRODUCTION STUDIO (SiriusMed Care Showcase)
+         ========================================================================== -->
+    <section id="ai-studio" class="section-padding ai-studio-section">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <div class="section-tag" style="color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.3);">
+            <span class="section-tag-dot" style="background: var(--accent-purple); box-shadow: var(--glow-purple);"></span>
+            <span>Generative AI Media Studio</span>
+          </div>
+          <h2 class="section-title">SiriusMed Care: AI Video Engineering</h2>
+          <p class="section-subtitle">
+            Beyond standard frontend engineering, I direct full-cycle generative AI video production. As AI Video Producer for SiriusMed Care, I produce character-led clinical narratives, scripted storyboards, and automated video pipelines.
+          </p>
+        </div>
+
+        <!-- Studio Showcase Interactive Box -->
+        <div class="studio-showcase-box">
+          <div class="studio-topbar">
+            <div class="studio-title-group">
+              <div class="studio-mac-dots">
+                <span class="mac-dot dot-red"></span>
+                <span class="mac-dot dot-yellow"></span>
+                <span class="mac-dot dot-green"></span>
+              </div>
+              <span class="studio-title-text">SIRIUSMED AI PRODUCTION SUITE // v3.1 RUNTIME</span>
+            </div>
+            <div class="studio-status-tag">
+              <span class="pulse-dot" style="background: var(--accent-purple); box-shadow: 0 0 8px var(--accent-purple);"></span>
+              <span>RENDER ENGINE READY</span>
+            </div>
+          </div>
+
+          <div class="studio-main-grid">
+            
+            <!-- Video Preview & Timeline -->
+            <div class="studio-viewport">
+              <img src="assets/images/siriusmed.jpg" alt="SiriusMed AI Production Studio Interface" loading="lazy">
+              
+              <!-- Interactive Timeline Scrubber -->
+              <div class="studio-timeline-scrubber">
+                <div class="scrubber-controls">
+                  <button id="scrubber-play-btn" class="scrubber-btn" title="Simulate Play/Pause Video">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="scrubber-track-wrap">
+                  <div class="scrubber-track" title="Click anywhere to scrub playback position">
+                    <div id="scrubber-progress" class="scrubber-progress"></div>
+                    <div id="scrubber-thumb" class="scrubber-thumb"></div>
+                  </div>
+                </div>
+
+                <span id="scrubber-timestamp" class="scrubber-timestamp">00:01:55</span>
+              </div>
+            </div>
+
+            <!-- Details Panel & Storyboard Scene Selector -->
+            <div class="studio-details-panel">
+              <div>
+                <h3 class="studio-panel-title">Character-Led Medical Storyboarding</h3>
+                <p class="studio-panel-desc">
+                  Managing the video content pipeline end-to-end: translating medical features into accessible, empathetic narratives with photorealistic AI avatars and synchronized voiceovers.
+                </p>
+
+                <!-- Scene Selector Tabs -->
+                <div class="storyboard-tabs-header">
+                  <button class="sb-tab-btn active" data-scene="0">Scene 01: Triage</button>
+                  <button class="sb-tab-btn" data-scene="1">Scene 02: Compliance</button>
+                  <button class="sb-tab-btn" data-scene="2">Scene 03: Immunization</button>
+                </div>
+
+                <div class="storyboard-card">
+                  <div id="sb-card-title" class="sb-card-title">Scene 01: AI Medical Diagnostic Triage</div>
+                  <div id="sb-card-desc" class="sb-card-desc">
+                    Character-led narrative demonstrating clinical intake workflow, symptom comprehension, and natural language communication for patient reassurance.
+                  </div>
+                  <div id="sb-prompt-text" class="sb-prompt-box">
+                    PROMPT // 'Cinematic shot of Dr. Anya Sharma explaining emergency protocol triage, hyper-accurate medical terminology, serene clinical lighting, warm empathetic gaze, 4k 60fps'.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Audio Waveform Visualizer -->
+              <div class="audio-visualizer-row">
+                <div class="audio-bars-container">
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                  <span class="audio-bar"></span>
+                </div>
+                <div class="audio-meta-text">
+                  Neural Voice Synthesis &bull; 48kHz Broadcast Master
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         NEURAL TECH STACK & SKILL MATRIX
+         ========================================================================== -->
+    <section id="stack" class="section-padding">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Neural Tech Stack</span>
+          </div>
+          <h2 class="section-title">Full-Stack Competencies &amp; Tools</h2>
+          <p class="section-subtitle">
+            A comprehensive overview of technical tools, frameworks, and methodologies honed across high-traffic applications and collaborative engineering teams.
+          </p>
+        </div>
+
+        <!-- Filter Navigation -->
+        <div class="skills-filter-nav">
+          <button class="skill-filter-btn active" data-filter="all">All Disciplines</button>
+          <button class="skill-filter-btn" data-filter="frontend">Frontend &amp; UI</button>
+          <button class="skill-filter-btn" data-filter="backend">Backend &amp; DB</button>
+          <button class="skill-filter-btn" data-filter="aimedia">AI &amp; Generative Media</button>
+          <button class="skill-filter-btn" data-filter="workflow">DevOps &amp; Testing</button>
+        </div>
+
+        <!-- Skills Matrix Grid -->
+        <div class="skills-matrix-grid">
+          
+          <!-- React / Next.js -->
+          <div class="skill-card glow-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(90 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(150 12 12)"></ellipse>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="skill-badge">Core Engine</span>
+            </div>
+            <h4 class="skill-title">React.js &amp; Next.js</h4>
+            <p class="skill-description">SSR, ISR, Server Components, client-side caching, reusable component systems, and high-FPS interactive UI.</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>95%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div>
+            </div>
+          </div>
+
+          <!-- TypeScript & Modern JS -->
+          <div class="skill-card glow-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                  <line x1="9" y1="20" x2="15" y2="20"></line>
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                </svg>
+              </div>
+              <span class="skill-badge">Type Safety</span>
+            </div>
+            <h4 class="skill-title">TypeScript &amp; ES6+</h4>
+            <p class="skill-description">Strict type contracts, generics, asynchronous paradigms, Web APIs, and robust frontend architectures.</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>90%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Cypress E2E Testing -->
+          <div class="skill-card glow-card" data-category="workflow">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <span class="skill-badge">Quality Assurance</span>
+            </div>
+            <h4 class="skill-title">Cypress E2E Testing</h4>
+            <p class="skill-description">End-to-end integration tests, regression protection, mocking API responses, and automated CI test passes.</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>92%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Node.js & REST APIs -->
+          <div class="skill-card glow-card" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <span class="skill-badge">Server &amp; API</span>
+            </div>
+            <h4 class="skill-title">Node.js &amp; Express</h4>
+            <p class="skill-description">RESTful services, middleware architecture, Swagger/OpenAPI documentation compliance, and Postman testing.</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>88%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Databases: MongoDB & Postgres -->
+          <div class="skill-card glow-card" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <span class="skill-badge">Data Persistence</span>
+            </div>
+            <h4 class="skill-title">MongoDB &amp; PostgreSQL</h4>
+            <p class="skill-description">Relational and document schema modeling, indexing, query optimization, and transaction safety.</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>86%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 86%;"></div></div>
+            </div>
+          </div>
+
+          <!-- AI Video Production & Storyboarding -->
+          <div class="skill-card glow-card" data-category="aimedia">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: var(--accent-purple);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <span class="skill-badge" style="color: var(--accent-purple);">Generative AI</span>
+            </div>
+            <h4 class="skill-title">AI Video &amp; Storyboarding</h4>
+            <p class="skill-description">End-to-end prompt engineering, narrative scripting, avatar synthesis, and audio visualizer pipelines.</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>94%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 94%; background: linear-gradient(135deg, #a855f7, #ec4899);"></div></div>
+            </div>
+          </div>
+
+          <!-- UI/UX & Figma Systems -->
+          <div class="skill-card glow-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+                </svg>
+              </div>
+              <span class="skill-badge">Design Systems</span>
+            </div>
+            <h4 class="skill-title">Figma to Code &amp; Tailwind</h4>
+            <p class="skill-description">Pixel-perfect translation of design systems into fluid, tokenized CSS and utility architectures.</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>96%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 96%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Git & Agile Collaboration -->
+          <div class="skill-card glow-card" data-category="workflow">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="18" r="3"></circle>
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
+                  <line x1="6" y1="9" x2="6" y2="21"></line>
+                </svg>
+              </div>
+              <span class="skill-badge">Team Ops</span>
+            </div>
+            <h4 class="skill-title">Git, Jira &amp; Agile Sprints</h4>
+            <p class="skill-description">Feature branching, PR reviews, Scrum sprint cadence, and cross-functional leadership (Glovo ambassador).</p>
+            <div class="skill-meter-wrap">
+              <div class="meter-meta">
+                <span>Proficiency</span>
+                <span>92%</span>
+              </div>
+              <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Code Demo Panel: Cypress E2E Simulation -->
+        <div class="code-preview-panel">
+          <div class="code-header-bar">
+            <div class="code-tab-active">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>cypress/e2e/order_flow.spec.ts</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span id="test-status-tag" style="font-family: var(--font-mono); font-size: 0.74rem; color: #34d399;">
+                ✔ Ready to execute suite
+              </span>
+              <button id="run-test-btn" class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.75rem;">
+                Run Cypress Test
+              </button>
+            </div>
+          </div>
+
+          <pre class="code-editor-body"><code><span class="token-comment">// Cypress End-to-End Test Suite by David Asuquo</span>
+<span class="token-function">describe</span>(<span class="token-string">'Southside Food &amp; Vitals E-Commerce Checkout Pipeline'</span>, () => {
+  <span class="token-function">beforeEach</span>(() => {
+    <span class="token-keyword">cy</span>.<span class="token-function">visit</span>(<span class="token-string">'/'</span>);
+    <span class="token-keyword">cy</span>.<span class="token-function">intercept</span>(<span class="token-string">'POST'</span>, <span class="token-string">'/api/v1/payment/verify'</span>, { statusCode: 200, fixture: <span class="token-string">'receipt.json'</span> }).<span class="token-function">as</span>(<span class="token-string">'verifyPay'</span>);
+  });
+
+  <span class="token-function">it</span>(<span class="token-string">'should assemble cart, select dispatch zone, and verify payment completion'</span>, () => {
+    <span class="token-keyword">cy</span>.<span class="token-function">get</span>(<span class="token-string">'[data-testid="item-card-nexus"]'</span>).<span class="token-function">find</span>(<span class="token-string">'button'</span>).<span class="token-function">click</span>();
+    <span class="token-keyword">cy</span>.<span class="token-function">get</span>(<span class="token-string">'[data-testid="cart-badge"]'</span>).<span class="token-function">should</span>(<span class="token-string">'contain.text'</span>, <span class="token-string">'1'</span>);
+    <span class="token-keyword">cy</span>.<span class="token-function">get</span>(<span class="token-string">'[data-testid="checkout-submit"]'</span>).<span class="token-function">click</span>();
+    <span class="token-keyword">cy</span>.<span class="token-function">wait</span>(<span class="token-string">'@verifyPay'</span>).<span class="token-function">its</span>(<span class="token-string">'response.statusCode'</span>).<span class="token-function">should</span>(<span class="token-string">'eq'</span>, 200);
+    <span class="token-keyword">cy</span>.<span class="token-function">get</span>(<span class="token-string">'[data-testid="order-success-banner"]'</span>).<span class="token-function">should</span>(<span class="token-string">'be.visible'</span>);
+  });
+});</code></pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE & CAREER TIMELINE
+         ========================================================================== -->
+    <section id="journey" class="section-padding">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Professional Trajectory</span>
+          </div>
+          <h2 class="section-title">Experience &amp; Milestones</h2>
+          <p class="section-subtitle">
+            A chronological timeline of roles delivering commercial software, AI media, and operational leadership.
+          </p>
+        </div>
+
+        <div class="experience-timeline">
+          
+          <!-- NODE 1: SiriusMed care -->
+          <div class="timeline-node">
+            <div class="timeline-marker">
+              <div class="marker-inner"></div>
+            </div>
+            <div class="timeline-card glow-card">
+              <div class="role-header-row">
+                <div>
+                  <h3 class="role-title">AI Video Producer <span class="role-company">@ SiriusMed Care</span></h3>
+                  <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-tertiary); margin-top: 2px;">
+                    Freelance &bull; Generative Media Production
+                  </div>
+                </div>
+                <span class="role-badge-date">April 2026 — Present</span>
+              </div>
+              
+              <div class="role-highlights-list">
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Develop scripts and storyboards for AI-generated promotional and educational videos for SiriusMed's AI medical assistant product.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Produce character-led and narrative-style video content explaining key healthcare features such as medication compliance and immunization tracking.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Manage the entire video content pipeline end-to-end, from concept through storyboard generation to final broadcast delivery.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NODE 2: Southside Food -->
+          <div class="timeline-node">
+            <div class="timeline-marker">
+              <div class="marker-inner"></div>
+            </div>
+            <div class="timeline-card glow-card">
+              <div class="role-header-row">
+                <div>
+                  <h3 class="role-title">Frontend Engineer <span class="role-company">@ Southside Food, Lagos</span></h3>
+                  <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-tertiary); margin-top: 2px;">
+                    E-Commerce &amp; Logistics Platform
+                  </div>
+                </div>
+                <span class="role-badge-date">Present</span>
+              </div>
+
+              <div class="role-highlights-list">
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Converted comprehensive Figma designs into a fast, fluid e-commerce interface using React.js.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Engineered an internal library of reusable React components, accelerating feature turnaround times and ensuring visual consistency.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Integrated RESTful APIs in collaboration with backend teams and incorporated Paystack / Flutterwave payment gateways.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Integrated Cypress for automated E2E test coverage and enhanced user experience based on analytical feedback.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NODE 3: Glovo Nigeria -->
+          <div class="timeline-node">
+            <div class="timeline-marker">
+              <div class="marker-inner"></div>
+            </div>
+            <div class="timeline-card glow-card">
+              <div class="role-header-row">
+                <div>
+                  <h3 class="role-title">Brand Ambassador <span class="role-company">@ Glovo Nigeria</span></h3>
+                  <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-tertiary); margin-top: 2px;">
+                    Logistics Fleet Operations &amp; Rider Retention
+                  </div>
+                </div>
+                <span class="role-badge-date">October 2025 — Present</span>
+              </div>
+
+              <div class="role-highlights-list">
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Recruit and onboard delivery couriers across assigned high-density operational zones, handling outreach to activation.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Conduct on-ground field visits to courier hotspots to address operational friction, resolve complaints, and enhance retention.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Maintain and audit rider records and performance metrics via internal management dashboard tools.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NODE 4: Swiftsell -->
+          <div class="timeline-node">
+            <div class="timeline-marker">
+              <div class="marker-inner"></div>
+            </div>
+            <div class="timeline-card glow-card">
+              <div class="role-header-row">
+                <div>
+                  <h3 class="role-title">Frontend Engineer <span class="role-company">@ Swiftsell, Lagos</span></h3>
+                  <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-tertiary); margin-top: 2px;">
+                    Merchant Commerce Engine
+                  </div>
+                </div>
+                <span class="role-badge-date">2023</span>
+              </div>
+
+              <div class="role-highlights-list">
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Collaborated closely with product designers to implement intuitive, accessible storefront administration interfaces.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Integrated RESTful endpoints into Next.js using Swagger/OpenAPI specifications.</span>
+                </div>
+                <div class="role-bullet-item">
+                  <span class="bullet-icon">&#9656;</span>
+                  <span>Utilized Git for distributed version control, pull request peer reviews, and Agile team standups.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & COLLABORATION STATION
+         ========================================================================== -->
+    <section id="contact" class="section-padding">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Initiate Direct Channel</span>
+          </div>
+          <h2 class="section-title">Let&#39;s Build Something Extraordinary</h2>
+          <p class="section-subtitle">
+            Whether you need a high-impact Senior Frontend/Full-Stack Engineer, an end-to-end AI video pipeline, or contract consulting, I am ready to deploy.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Direct Channels Card -->
+          <div class="contact-info-card glow-card">
+            <div>
+              <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 8px;">Direct Coordinates</h3>
+              <p style="color: var(--text-secondary); font-size: 0.94rem;">
+                Fastest response via direct email or WhatsApp/Phone. Available for worldwide remote roles or on-site engagements in Lagos.
+              </p>
+
+              <div class="direct-channels-list">
+                
+                <!-- Email -->
+                <div class="channel-item">
+                  <div class="channel-left">
+                    <div class="channel-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="channel-label">EMAIL ADDRESS</div>
+                      <a href="mailto:spiriteddavid@gmail.com" class="channel-value">spiriteddavid@gmail.com</a>
+                    </div>
+                  </div>
+                  <button class="copy-badge-btn copy-data-btn" data-copy="spiriteddavid@gmail.com">Copy</button>
+                </div>
+
+                <!-- Phone -->
+                <div class="channel-item">
+                  <div class="channel-left">
+                    <div class="channel-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="channel-label">PHONE &amp; WHATSAPP</div>
+                      <a href="tel:+2348155606889" class="channel-value">+234 815 560 6889</a>
+                    </div>
+                  </div>
+                  <button class="copy-badge-btn copy-data-btn" data-copy="+2348155606889">Copy</button>
+                </div>
+
+                <!-- GitHub -->
+                <div class="channel-item">
+                  <div class="channel-left">
+                    <div class="channel-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="channel-label">GITHUB REPOSITORIES</div>
+                      <a href="https://github.com/spirited24" target="_blank" rel="noopener noreferrer" class="channel-value">github.com/spirited24</a>
+                    </div>
+                  </div>
+                  <a href="https://github.com/spirited24" target="_blank" rel="noopener noreferrer" class="copy-badge-btn" style="text-align: center;">Visit</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-tertiary);">
+                TIMEZONE: WEST AFRICA TIME (UTC+1) &bull; RESPONSE GUARANTEE &lt; 12H
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-panel glow-card">
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 20px;">Direct Message</h3>
+            
+            <form id="portfolio-contact-form">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">YOUR NAME</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Mercer" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">WORK EMAIL</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">INQUIRY TYPE</label>
+                <select id="contact-subject" class="form-input" style="cursor: pointer;">
+                  <option value="full-time">Full-Time Software Engineer Role</option>
+                  <option value="freelance">Freelance Web App Engineering</option>
+                  <option value="ai-video">SiriusMed-style AI Video Production</option>
+                  <option value="advisory">Technical Advisory / Code Review</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">BRIEF TRANSMISSION</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Tell me about your product vision, timeline, and tech stack requirements..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-md);">
+                <span>Transmit Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="site-container">
+      
+      <div class="footer-top">
+        <div class="brand-logo">
+          <div class="logo-symbol">
+            <svg viewBox="0 0 24 24">
+              <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+              <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <div>
+            <div style="font-weight: 800;">DAVID ASUQUO</div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary);">ENGINEERING &bull; AI VIDEO &bull; 2026</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="#work" class="btn-ghost" style="font-size: 0.84rem;">Work</a>
+          <a href="#ai-studio" class="btn-ghost" style="font-size: 0.84rem;">AI Studio</a>
+          <a href="#stack" class="btn-ghost" style="font-size: 0.84rem;">Stack</a>
+          <a href="#journey" class="btn-ghost" style="font-size: 0.84rem;">Journey</a>
+          <button class="btn-ghost open-resume-btn" style="font-size: 0.84rem;">Resume</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 David Asuquo. Crafted with zero-bloat vanilla web architecture to last the test of time.
+        </div>
+        <div style="display: flex; gap: 18px;">
+          <span>LAGOS, NG (6.5244° N, 3.3792° E)</span>
+          <span>SYSTEM: OPTIMAL</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       INTERACTIVE COMMAND PALETTE & TERMINAL MODAL (⌘K)
+       ========================================================================== -->
+  <div id="terminal-modal" class="terminal-modal-backdrop" role="dialog" aria-modal="true" aria-label="Terminal CLI">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="term-dot close close-terminal-btn" title="Close Terminal"></span>
+          <span class="term-dot min" title="Minimize"></span>
+          <span class="term-dot max" title="Maximize"></span>
+        </div>
+        <span class="term-title">david_asuquo_cli_v2026.exe (bash)</span>
+        <button class="close-terminal-btn" style="color: var(--text-tertiary); font-size: 0.85rem;" title="Close (Esc)">&times;</button>
+      </div>
+
+      <div id="term-body" class="term-body">
+        <div class="term-output-line" style="color: var(--accent-cyan); font-weight: 700;">
+          === DAVID ASUQUO // SYSTEM CLI CONSOLE 2026 ===
+        </div>
+        <div class="term-output-line" style="color: var(--text-secondary);">
+          Type <span style="color: var(--accent-cyan);">help</span> to view all commands, or <span style="color: var(--accent-cyan);">about</span>, <span style="color: var(--accent-cyan);">skills</span>, <span style="color: var(--accent-cyan);">projects</span>, <span style="color: var(--accent-cyan);">contact</span>, <span style="color: var(--accent-cyan);">resume</span>.
+        </div>
+      </div>
+
+      <div class="term-prompt-row">
+        <span class="term-prompt-symbol">asuquo@terminal:~$</span>
+        <input type="text" id="term-input" class="term-input" placeholder="type 'help' or command..." autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FULL RESUME DOSSIER MODAL
+       ========================================================================== -->
+  <div id="resume-modal" class="resume-modal-backdrop" role="dialog" aria-modal="true" aria-label="Resume Dossier">
+    <div class="resume-paper-container">
+      
+      <div class="resume-paper-header">
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 4px;">David Asuquo</h2>
+          <div style="font-family: var(--font-mono); font-size: 0.95rem; color: var(--accent-cyan); margin-bottom: 8px;">
+            Full-Stack Developer | AI Video Producer
+          </div>
+          <div style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-wrap: wrap; gap: 12px;">
+            <span>📍 Lagos, Nigeria</span>
+            <span>📞 +234 815 560 6889</span>
+            <span>📧 spiriteddavid@gmail.com</span>
+            <span>💻 github.com/spirited24</span>
+          </div>
+        </div>
+
+        <div class="resume-actions-bar">
+          <button id="print-resume-btn" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.82rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <button class="btn-icon close-resume-btn" title="Close Dossier">&times;</button>
+        </div>
+      </div>
+
+      <!-- Resume Core Content Body -->
+      <div style="display: flex; flex-direction: column; gap: 26px;">
+        
+        <!-- Core Skills -->
+        <section>
+          <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--accent-cyan); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; margin-bottom: 12px;">
+            Core Skills
+          </h3>
+          <ul style="font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>Languages &amp; Tools:</strong> HTML5, CSS3, Tailwind, JavaScript, TypeScript, ReactJS (Next JS, Vite), Node JS, MongoDB, Postgres, Cypress, Git, Jira (AGILE and SCRUM methodology), Figma, Postman</li>
+            <li><strong>AI &amp; Content:</strong> AI-assisted video production (scripting, storyboarding), applied research into AI tools and workflows</li>
+            <li><strong>Other Skills:</strong> Critical thinking, Problem solving, Team Collaboration, Operations &amp; People Management</li>
+          </ul>
+        </section>
+
+        <!-- Experience -->
+        <section>
+          <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--accent-cyan); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; margin-bottom: 16px;">
+            Experience
+          </h3>
+
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+                <span>SiriusMed Care — AI Video Producer (Freelance)</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-tertiary);">April 2026 – Present</span>
+              </div>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; padding-left: 20px; list-style-type: disc;">
+                <li>Develop scripts and storyboards for AI-generated promotional and educational videos for SiriusMed's AI medical assistant product</li>
+                <li>Produce character-led and narrative-style video content explaining product features such as medication compliance and immunization tracking</li>
+                <li>Manage the video content pipeline end-to-end, from concept through storyboard to final delivery</li>
+              </ul>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+                <span>Southside Food, Lagos — Frontend Engineer</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-tertiary);">Present</span>
+              </div>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; padding-left: 20px; list-style-type: disc;">
+                <li>Converted Figma designs into a dynamic e-commerce UI with React.js</li>
+                <li>Built a library of reusable React components, improving development efficiency and consistency across multiple features</li>
+                <li>Collaborated with backend Engineers to integrate API's to React JS</li>
+                <li>Integrated Cypress for E2E test automation</li>
+                <li>Added payment integration using Paystack / Flutterwave and Payment gateways</li>
+                <li>Improved the application's interface based on user feedback, which boosted interaction and overall experience</li>
+              </ul>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+                <span>Glovo Nigeria — Brand Ambassador</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-tertiary);">October 2025 – Present</span>
+              </div>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; padding-left: 20px; list-style-type: disc;">
+                <li>Recruit and onboard delivery riders across assigned zones, managing the process from outreach to activation</li>
+                <li>Conduct field visits to rider hotspots to resolve on-ground operational issues and support rider retention</li>
+                <li>Maintain and update rider records and performance data via internal dashboard tools</li>
+                <li>Serve as day-to-day liaison between riders and company operations</li>
+              </ul>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--text-primary);">
+                <span>Swiftsell, Lagos — Frontend Engineer</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-tertiary);">2023</span>
+              </div>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; padding-left: 20px; list-style-type: disc;">
+                <li>Worked with UI/UX designers to build easy-to-use and clear app interfaces</li>
+                <li>Integrated API's to Next JS using Swagger doc spec</li>
+                <li>Added new features to the app and ensured they looked good and functioned well</li>
+                <li>Used Git for version control and worked in a team using pull requests and code reviews</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Links -->
+        <section>
+          <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--accent-cyan); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; margin-bottom: 12px;">
+            Projects Links
+          </h3>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+            <li>📦 <strong>Vitals E-commerce App:</strong> <a href="https://vitals-frontend.vercel.app" target="_blank" style="color: var(--accent-cyan);">https://vitals-frontend.vercel.app</a></li>
+            <li>🍲 <strong>Southside Food App:</strong> <a href="https://www.southsidefood.com" target="_blank" style="color: var(--accent-cyan);">https://www.southsidefood.com</a></li>
+            <li>🛒 <strong>Swiftsell Shop App:</strong> <a href="https://www.swiftsell.shop" target="_blank" style="color: var(--accent-cyan);">https://www.swiftsell.shop</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
